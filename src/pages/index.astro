@@ -1,4 +1,10 @@
 ---
+import { client } from "../lib/client";
+import type { About } from "./model";
+
+const about: About = await client.getContent({
+	id: "685eb36e45767b0f312fce64"
+});
 
 ---
 
@@ -11,6 +17,6 @@
 		<title>Astro</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<h1>Astro: {about.fullname}</h1>
 	</body>
 </html>
